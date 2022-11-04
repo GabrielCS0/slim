@@ -1,13 +1,13 @@
 import React from "react";
 import { Typography, Stack, Button } from "@mui/material";
 
-import { ExerciseDetailType } from "../pages/ExerciseDetail";
+import { ExerciseResponseType } from "../pages/ExerciseDetail";
 import BodyPartImage  from "../assets/icons/body-part.png";
 import TargetImage from "../assets/icons/target.png";
 import EquipmentImage from "../assets/icons/equipment.png";
 
 type DetailData = {
-    exerciseDetail: ExerciseDetailType;
+    exerciseDetail: ExerciseResponseType;
 }
 
 const Detail = ({ exerciseDetail }: DetailData) => {
@@ -49,7 +49,7 @@ const Detail = ({ exerciseDetail }: DetailData) => {
                     gap: { lg: "35px", xs: "20px" }
                 }}
             >
-                <Typography variant="h3">
+                <Typography variant="h3" textTransform="capitalize">
                     {name}
                 </Typography>
                 <Typography variant="h6" lineHeight="45px">

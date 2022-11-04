@@ -5,14 +5,23 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
 import BodyPartCard from "./BodyPartCard";
+import ExerciseCard from "./ExerciseCard";
 
 type HorizontalScrollbarData = {
   data: string[] | any[];
-  bodyPart: string;
-  setBodyPart: React.Dispatch<React.SetStateAction<string>>;
+  isBodyParts: boolean;
+  isExerciseDetail?: boolean;
+  bodyPart?: string;
+  setBodyPart?: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }: HorizontalScrollbarData) => {
+const HorizontalScrollbar = ({
+  data,
+  bodyPart,
+  isExerciseDetail,
+  isBodyParts,
+  setBodyPart
+}: HorizontalScrollbarData) => {
   const LeftArrow = () => {
     const { scrollPrev } = useContext(VisibilityContext);
   
@@ -38,16 +47,30 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }: HorizontalScrollba
       LeftArrow={LeftArrow}
       RightArrow={RightArrow}
     >
-      {data.map(item => ( 
-        <BodyPartCard
-          key={item.id || item}
-          itemId={item.id || item}
-          title={item.id || item}
-          item={item}
-          bodyPart={bodyPart}
-          setBodyPart={setBodyPart}
-        />
-      ))}
+      {data.map(item => { 
+        if (isBodyParts) {
+          return (
+            <BodyPartCard
+              key={item.id || item}
+              itemId={item.id || item}
+              title={item.id || item}
+              item={item}
+              bodyPart={bodyPart}
+              setBodyPart={setBodyPart}
+            />
+          );
+        };
+
+        return (
+          <ExerciseCard
+            key={item.id || item}
+            itemId={item.id || item}
+            title={item.id || item}
+            exercise={item}
+            isExerciseDetail={isExerciseDetail}
+          />
+        );
+      })}
     </ScrollMenu>
   );
 };

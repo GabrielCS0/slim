@@ -75,6 +75,10 @@ body {
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
 }
+
+.exercise-detail-card {
+    margin: 0px 15px 0px 15px;
+}
   
 .exercise-card img {
     height: 326px;

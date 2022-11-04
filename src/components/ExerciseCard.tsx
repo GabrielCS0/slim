@@ -6,13 +6,16 @@ import { ExerciseRequestResponseType } from "../pages/Home";
 
 type ExerciseCardData = {
     exercise: ExerciseRequestResponseType;
+    isExerciseDetail?: boolean;
+    itemId?: string;
+    title?: string;
 };
 
-const ExerciseCard = ({ exercise }: ExerciseCardData) => {
+const ExerciseCard = ({ exercise, isExerciseDetail, itemId, title }: ExerciseCardData) => {
   return (
     <Link
-        to={`/exercises/${exercise.id}`}
-        className="exercise-card"
+        to={`/exercise/${exercise.id}`}
+        className={`exercise-card ${isExerciseDetail ? "exercise-detail-card" : ""}`}
     >
         <img
             src={exercise.gifUrl}
