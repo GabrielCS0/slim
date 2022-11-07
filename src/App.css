@@ -55,10 +55,14 @@ body {
 .hero-banner-img {
     position: absolute;
     right: 40px;
-    top: 0px;
+    top: 92px;
     width: 700px;
     height: 900px;
     margin-top: -330px;
+}
+
+.hero-button:hover {
+    background-color: #FC3D3D !important;
 }
   
 .exercise-card {

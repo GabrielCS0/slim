@@ -30,6 +30,7 @@ export type ExerciseVideosType = {
 };
 
 const ExerciseDetail = () => {
+  window.scrollTo({ top: 0, left: 0 });
   const exerciseResponseInitialState = {
     bodyPart: "",
     equipment: "",

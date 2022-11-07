@@ -9,7 +9,7 @@ const HeroBanner = () => {
       position="relative"
       p="20px"
       sx={{
-        mt: { lg: "212px", xs: "70px" },
+        mt: { lg: "125px", xs: "70px" },
         ml: { sm: "50px" }
       }}
     >
@@ -43,6 +43,7 @@ const HeroBanner = () => {
       <Button
         variant="contained"
         href="#exercises"
+        className="hero-button"
         sx={{
           backgroundColor: "#FF2625",
           padding: "10px"
